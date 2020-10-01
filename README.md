@@ -6,4 +6,8 @@
 
 ----
  
-## lab day 2  https://github.com/HruthikBM/vvce_lab/commit/40059cce6a8ce70c7e53e044a8bebea938fde9cb
+## lab day 2 
+### 1.  https://github.com/HruthikBM/vvce_lab/commit/40059cce6a8ce70c7e53e044a8bebea938fde9cb
+### 2.  https://github.com/HruthikBM/vvce_lab/blob/master/strrepsol.png
+
+------
