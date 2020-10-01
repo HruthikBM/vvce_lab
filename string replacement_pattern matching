@@ -1,0 +1,85 @@
+#include<stdio.h>
+int slen(char s[]){
+	int c=0;
+	while(s[c]!='\0'){
+		c++;
+	}
+	return c;
+}
+int cmp(char s1[],char s2[],int i){
+	int k=0;
+	int j=0;
+	int n1,n2;
+	n1=slen(s1);
+	n2=slen(s2);
+	while(k<n2){
+		if(s1[k+i]==s2[k]) j++;
+		k++;
+	}
+	if(j==n2) return 1;
+	else return -1;
+
+}
+
+void r_p_s(char STR[],char PAT[],char REP[],char DEST[]){
+	int i,j,k;
+	int msl,patl,repl;
+	i=j=k=0;
+   msl=slen(STR);
+   patl=slen(PAT);
+   repl=slen(REP);
+   int flag=0;
+   while(i<=msl-patl+1){
+   	 if(STR[i]==PAT[0]){
+   	    flag=cmp(STR,PAT,i);
+   	    if(flag==1)  {
+   	    	while(j<i){
+   	    		DEST[k]=STR[k];
+   	    		k++;
+   	    		j++;
+   	    	}
+   	    	j=0;
+   	    	while(j<repl){
+   	    		DEST[k]=REP[j];
+   	    		j++;
+   	    		k++;
+   	    	}
+   	    	i=i+patl;
+   	    	j=i;
+   	    }
+   	    else{
+   	    	i++;
+   	    }
+   	}
+   	else
+   		i++;
+   }
+while(j<msl){
+	DEST[k]=STR[k];
+	k++;
+	j++;
+}
+DEST[k]='\0';
+
+}
+int main(){
+	char STR[20];
+	char PAT[10];
+	char REP[10];
+	char DEST[30];
+	//int eq=0;
+	printf("enter the main string\n");
+	scanf("%s",STR);
+	printf("enter the PAT string\n");
+	scanf("%s",PAT);
+	printf("enter the REP string\n");
+	scanf("%s",REP);
+	int ls,lp,lr;
+	ls=slen(STR);
+	lp=slen(PAT);
+	lr=slen(REP);
+   r_p_s(STR,PAT,REP,DEST);
+
+	printf("%s",DEST);
+	return 0;
+}
